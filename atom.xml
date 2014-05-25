@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Sandeep Kharat]]></title>
+  <link href="http://sandeepkharat.github.io/atom.xml" rel="self"/>
+  <link href="http://sandeepkharat.github.io/"/>
+  <updated>2014-05-25T12:44:06-05:00</updated>
+  <id>http://sandeepkharat.github.io/</id>
+  <author>
+    <name><![CDATA[Sandeep Kharat]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript - Introduction]]></title>
+    <link href="http://sandeepkharat.github.io/blog/2014/05/25/javascript-introduction/"/>
+    <updated>2014-05-25T12:31:11-05:00</updated>
+    <id>http://sandeepkharat.github.io/blog/2014/05/25/javascript-introduction</id>
+    <content type="html"><![CDATA[<h2>History</h2>
+
+<p>JavaScript was written in 10 days by a stupid person. As a result it has too many bugs. But still its an awesome language, to work with.</p>
+]]></content>
+  </entry>
+  
+</feed>
