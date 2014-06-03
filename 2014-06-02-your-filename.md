@@ -2,35 +2,40 @@
 The simple types of JavaScript are numbers, strings, booleans (true and false), null, and undefined.  All other values are objects, arrays are objects, functions are objects, regular expressions are objects, and, of course, objects are objects.
 
 An object is a container of properties and functions, objects in JavaScript are class-free.
+
 •**Properties** are **values** associated with objects. 
 
 A property has a name and a value. A property name can be any string, including the empty string. A property value can be any JavaScript value except for undefined.
+
 car.model = “Elantra”;	        //valid property <br/>
 car[model] = “Elantra”;	       //valid property <br/>
 myObject[“ “] = “some value”;  //even an empty string is a valid property
 
+
 •	**Functions** are **actions** objects can perform.
-car.start(); 
+
+car.start(); <br/>
 car.drive();
 
 ## Object Concepts
 ### 1.	Object Literal
 Object literals provide a very convenient notation for creating new object values. An object literal is a comma-separated list of name-value pairs wrapped in curly braces.
-This is an empty object
+
+This is an empty object<br/>
 var car = {};
 
-Add properties
-var car = {
-	make: “Hyundai”,
-model: "Elantra",
-	color: "Red",
-	“seat-color”: “Black” 
-//Because of special characters double quotes are used.
+Add properties<br/>
+var car = {<br/>
+	make: “Hyundai”,<br/>
+    model: "Elantra",<br/>
+	color: "Red",<br/>
+	“seat-color”: “Black” <br/>
+//Because of special characters double quotes are used.<br/>
 };
 
-Add a method
-car.start = function () {
-	//implementation
+Add a method<br/>
+car.start = function () {<br/>
+	//implementation<br/>
 };
 
 ### 2.	Object Retrieval
