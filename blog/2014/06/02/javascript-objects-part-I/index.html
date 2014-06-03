@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Sandeep Kharat</title>
+  <meta name="author" content="Sandeep Kharat">
+
+  
+  <meta name="description" content="---">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sandeepkharat.github.io">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Sandeep Kharat" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Sandeep Kharat</a></h1>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:sandeepkharat.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/25/javascript-objects-part-i/">JavaScript Objects Part - I</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-25T12:31:11-05:00" pubdate data-updated="true">May 25<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">
+
+##  JavaScript Objects Part - I
+The simple types of JavaScript are numbers, strings, booleans (true and false), null, and undefined.  All other values are objects, arrays are objects, functions are objects, regular expressions are objects, and, of course, objects are objects.
+
+An object is a container of properties and functions, objects in JavaScript are class-free.
+
+•**Properties** are **values** associated with objects. 
+
+A property has a name and a value. A property name can be any string, including the empty string. A property value can be any JavaScript value except for undefined.
+
+car.model = “Elantra”;	        //valid property <br/>
+car[model] = “Elantra”;	       //valid property <br/>
+myObject[“ “] = “some value”;  //even an empty string is a valid property
+
+
+•	**Functions** are **actions** objects can perform.
+
+car.start(); <br/>
+car.drive();
+
+## Object Concepts
+### 1.	Object Literal
+Object literals provide a very convenient notation for creating new object values. An object literal is a comma-separated list of name-value pairs wrapped in curly braces.
+
+This is an empty object<br/>
+var car = {};
+
+Add properties<br/>
+var car = {<br/>
+	make: “Hyundai”,<br/>
+    model: "Elantra",<br/>
+	color: "Red",<br/>
+	“seat-color”: “Black” <br/>
+//Because of special characters double quotes are used.<br/>
+};
+
+Add a method<br/>
+car.start = function () {<br/>
+	//implementation<br/>
+};
+
+<br/>
+### 2.	Object Retrieval
+Properties of JavaScript objects can be accessed by wrapping a string expression in square brackets. If the string expression is a constant, and if it is a legal JavaScript name and not a reserved word, then the dot notation can be used instead.
+
+car[“seat-color”]		//Black<br/>
+car.make				//Hyundai
+
+We can try to get any property from an object. There will be no error. But if the property does not exist, then undefined is returned.
+
+car["body-color"] 		//undefined<br/>
+car.mileage 			//undefined<br/>
+car["CRUISE-CONTROL"] 	//undefined<br/>
+
+The || operator can be used to fill in default values, this is just an OR operator, which works as null coalescing operator in JavaScript, car.mileage (i.e. undefined) OR 25. Since undefined is falsey value, 25 is output of the expression and it is assigned to mileage variable.
+
+var mileage = car.mileage || 25;<br/>
+var bodyColor = car["body-color"] || “unknown”;<br/>
+
+If you try to retrieve values from undefined it will throw a TypeError exception. This is something similar to NULL.ToString() in C#. Since we tried to access property on undefined it threw exception. This can be handled using && operator.
+
+car.exterier 				 //undefined <br/>
+car.exterier.color			 //throw "TypeError" <br/>
+car.exterier && car.exterier.color	 //undefined<br/>
+
+<br/>
+### 3.	Updating object
+
+A value in an object can be updated by assignment. If the property name already exists in the object then property value is replaced:
+
+car.model = “civic”;
+
+If the object does not already have that property name then it gets added
+
+car.mileage = 30;
+
+<br/>
+### 4.	Reference
+
+In JavaScript objects are passed by reference, they are never copied. This means any modifications made to the passed object are being made to the original object and are not being made to a copy of that object.
+
+var x = car;<br/>
+x.model = “i20”;<br/>
+
+//below cname is 'i20' because x and car are references to the same object<br/>
+var cname = x.model<br/>
+
+// x, y, and z each refer to a different empty object<br/>
+var x = {}, y = {}, z = {};<br/>
+
+//x, y, and z all refer to the same empty object<br/>
+x = y = z = {};<br/>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/25/javascript-objects.part-i/">JavaScript Objects Part - I</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Sandeep Kharat -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
