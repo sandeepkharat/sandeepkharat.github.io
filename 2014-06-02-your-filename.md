@@ -38,6 +38,7 @@ car.start = function () {<br/>
 	//implementation<br/>
 };
 
+
 ### 2.	Object Retrieval
 Properties of JavaScript objects can be accessed by wrapping a string expression in square brackets. If the string expression is a constant, and if it is a legal JavaScript name and not a reserved word, then the dot notation can be used instead.
 car[“seat-color”]		//Black
